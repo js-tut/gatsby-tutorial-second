@@ -2,7 +2,7 @@ import React from 'react'
 
 export default () => (
   <div>
-    <img src="image.jpeg" />
+    <h1>this is our home page</h1>
     Hello world!
   </div>
 )
