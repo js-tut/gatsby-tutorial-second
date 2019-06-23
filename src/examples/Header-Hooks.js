@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 const getData = graphql`
-  query {
+  query SecondQuery {
     site {
       siteMetadata {
         siteTitle: title
@@ -18,7 +18,7 @@ const Header = () => {
   const {
     site: { siteMetadata: info },
   } = useStaticQuery(getData)
-  console.log(info)
+  // console.log(info)
   const title = info.siteTitle
   return (
     <div>
