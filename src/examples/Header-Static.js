@@ -20,7 +20,7 @@ const HeaderStatic = () => {
     <StaticQuery
       query={getData}
       render={orange => {
-        console.log(orange)
+        // console.log(orange)
 
         return (
           <div>
