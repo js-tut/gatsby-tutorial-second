@@ -2,12 +2,12 @@ import React from 'react'
 import HeaderHook from '../examples/Header-Hooks'
 import HeaderStatic from '../examples/Header-Static'
 import { graphql } from 'gatsby'
-
+import Layout from '../components/layout'
 const examples = props => {
   const { name, age } = props.data.site.siteMetadata.person
 
   return (
-    <div>
+    <Layout>
       examples page
       <HeaderHook />
       <HeaderStatic />
@@ -16,7 +16,7 @@ const examples = props => {
         <h4>name :{name}</h4>
         <h4>age :{age}</h4>
       </div>
-    </div>
+    </Layout>
   )
 }
 
