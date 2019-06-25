@@ -20,6 +20,13 @@ const getImages = graphql`
         }
       }
     }
+    example: file(relativePath: { eq: "image-2.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 100) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `
 
@@ -32,14 +39,20 @@ const Images = () => {
       <article>
         <h3>basic image</h3>
         <img src={img} className="basic" />
+        <h2>content</h2>
       </article>
       <article>
         <h3>fixed image/blur</h3>
         <Image fixed={data.fixed.childImageSharp.fixed} />
+        <h2>content</h2>
       </article>
       <article>
         <h3>fluid image/svg</h3>
         <Image fluid={data.fluid.childImageSharp.fluid} />
+        <div className="small">
+          <Image fluid={data.example.childImageSharp.fluid} />
+        </div>
+        <h2>content</h2>
       </article>
     </Wrapper>
   )
@@ -53,9 +66,15 @@ const Wrapper = styled.section`
   .basic {
     width: 100%;
   }
+  .small {
+    width: 200px;
+  }
   article {
     border: 3px solid red;
     padding: 1rem 0;
+  }
+  .small {
+    width: 100px;
   }
   @media (min-width: 992px) {
     display: grid;
