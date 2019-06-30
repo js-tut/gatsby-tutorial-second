@@ -1,6 +1,7 @@
 import React from 'react'
 import SingleTour from './SingleTour'
-const Tours = () => {
+const Tours = ({ tours }) => {
+  console.log(tours)
   return (
     <div>
       this is tours component
