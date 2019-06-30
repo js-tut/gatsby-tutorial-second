@@ -21,6 +21,14 @@ module.exports = {
         path: `${__dirname}/src/posts/`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: 'aa6lmvvj10ja',
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: 'nVPmSFi1BcBubGwUWHkKinvn5cPFsanxf82UG7B_p54',
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
